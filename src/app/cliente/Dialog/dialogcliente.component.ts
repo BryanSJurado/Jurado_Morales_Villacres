@@ -51,6 +51,10 @@ export class DialogClienteComponent{
                 this.snackBar.open('Cliente Editado con éxito', '',{
                     duration: 2000
                 });
+            }else{
+                this.snackBar.open('Cliente No Editado con éxito' + response.exito, '',{
+                    duration: 2000
+                });
             }
         })
     }
@@ -68,6 +72,10 @@ export class DialogClienteComponent{
                 if(response.exito === 1){
                     this.dialogRef.close();
                     this.snackBar.open('Cliente Insertado con éxito', '',{
+                        duration: 2000
+                    });
+                }else{
+                    this.snackBar.open('Cliente No Insertado con éxito' + response.mensaje, '',{
                         duration: 2000
                     });
                 }

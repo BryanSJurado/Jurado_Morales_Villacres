@@ -61,6 +61,10 @@ export class DialoguserComponent implements OnInit {
                   this.snackBar.open('Usuario Insertado con éxito', '',{
                       duration: 2000
                   });
+              }else{
+                this.snackBar.open('Usuario Insertado con éxito'+ response.mensaje, '',{
+                    duration: 2000
+                });
               }
             })
           }else{
