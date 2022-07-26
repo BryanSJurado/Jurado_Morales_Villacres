@@ -18,6 +18,14 @@ export class LoginComponent implements OnInit{
           ])]
     })
 
+    /*
+     ['', Validators.compose([
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(10),
+            Validators.pattern(/^(?=.*\d)(?=.*[\u0021-\u002b\u002e\u003c-\u0040])(?=.*[A-Z]{2})(?=.*[a-z]{2})/)
+          ])]
+    */
     constructor(public apiauthService: ApiauthService, 
                 private router:Router,
                 private fb: FormBuilder){
