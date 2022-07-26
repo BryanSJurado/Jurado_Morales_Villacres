@@ -1,5 +1,4 @@
-<app-dialogcliente></app-dialogcliente>
-<app-dialogproducto></app-dialogproducto>
+
 <div id="pageContent" class="container-fluid py-3">
     <p style="text-align: center; color: #5466a4; font-size: 28px;"> <strong>Ventas</strong> </p>
     <div class="card text-center" style="height: 90%;">
@@ -15,10 +14,10 @@
                     <div class="row">
                         <label for="id_Cli_Ven" class="col-sm-4 col-form-label lblLeft">Selección</label>
                         <div class="col-sm-8">
-                            <button mat-raised-button color="primary" id="btnProdcutos"
-                                (click)="openDialogProducto()">Productos</button> |
-                            <button mat-raised-button color="primary" id="btnClientes"
-                                (click)="openDialogoCliente()">Clientes</button>
+                            <!--button mat-raised-button color="primary" id="btnProdcutos"
+                                (click)="openDialogProducto()">Productos</button--> |
+                            <!--button mat-raised-button color="primary" id="btnClientes"
+                                (click)="openDialogoCliente()">Clientes</button-->
                         </div>
                     </div>
                 </div>
@@ -65,7 +64,7 @@
                                         class="form-control text-right" type="number" pattern="[0-9]{4}"
                                         placeholder="Cantidad" min="1" max="{{ can_Con }}">
                                 </mat-form-field>
-                                <!--div id="img"></div-->
+                                <div id="img"></div>
                             </div>
                         </div>
                     </div>

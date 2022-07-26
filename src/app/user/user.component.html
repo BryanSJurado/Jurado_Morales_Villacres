@@ -3,7 +3,7 @@
 </div>
 
 <div id="pageContent" class="container-fluid py-3">
-    <p style="text-align: center; color: #455075; font-size: 28px;"><strong>Clientes</strong></p>
+    <p style="text-align: center; color: #455075; font-size: 28px;"><strong>Usuarios</strong></p>
     <div class="card text-center">
         <div class="card-header" style="background-color: #EAEBEF">
           <div class="row mt-3 mb-3">
@@ -17,8 +17,7 @@
                 <th>#</th>
                 <th>Cédula</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Género</th>
+                <th>Mail</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
                 <th></th>
@@ -34,7 +33,6 @@
                 <td>{{ element.telCli }}</td>
                 <td>{{ element.dirCli }}</td>
                 <td>
-                    <button (click)="openEdit(element)" mat-raised-button color="basic">Editar</button> |
                     <button (click)="Delete(element)" mat-raised-button color="warn">Eliminar</button>
                 </td>
               </tr>
