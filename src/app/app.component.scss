@@ -1,0 +1,131 @@
+
+.global-content {
+    width: 100px;
+    height: 100%;
+}
+
+#buttonMenu{
+    width: 120;
+    height: 35px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+  }
+
+  #buttonInicio{
+    width: 85px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+    background-color: #ffffff;
+  }
+
+  #routerInicio{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonInicio:hover{
+    background-color: #0077ff;
+  }
+
+  #buttonCliente{
+    width: 85px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+    background-color: #ffffff;
+  }
+
+  #routerCliente{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonCliente:hover{
+    background-color: #0077ff;
+  }
+
+  #buttonVenta{
+    width: 85px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+    background-color: #ffffff;
+  }
+
+  #routerVenta{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonVenta:hover{
+    background-color: #0077ff;
+  }
+
+  #buttonCerrar{
+    width: 85px;
+    height: 35px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+    background-color: #ffffff;
+  }
+
+  #routerCerrar{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonCerrar:hover{
+    background-color: #0077ff;
+  }
+
+  #buttonProducto{
+    width: 85px;
+    height: 35px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+    background-color: #ffffff;
+  }
+
+  #routerProducto{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonProducto:hover{
+    background-color: #0077ff;
+  }
+
+  .mat-drawer-container {
+    position: fixed;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+}
+
+.mat-drawer{
+    background-color: rgb(255, 255, 255);
+}

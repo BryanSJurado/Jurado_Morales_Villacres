@@ -1,0 +1,283 @@
+<app-dialogcliente></app-dialogcliente>
+<app-dialogproducto></app-dialogproducto>
+<div id="pageContent" class="container-fluid py-3">
+    <p style="text-align: center; color: #5466a4; font-size: 28px;"> <strong>Ventas</strong> </p>
+    <div class="card text-center" style="height: 90%;">
+        <div class="card-header" style="background-color: #EAEBEF">
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                    <div class="row">
+                        <label for="fecha" class="col-sm-4 col-form-label lblLeft">Fecha: </label>
+                        <input type="text" [(ngModel)]="fecha" name="" id="fecha" readonly> |
+                        <label for="idVenta" class="col-sm-4 col-form-label lblLeft">Id Venta: </label>
+                        <input type="text" [(ngModel)]="idVenta" name="" id="idVenta" readonly>
+                    </div>
+                    <div class="row">
+                        <label for="id_Cli_Ven" class="col-sm-4 col-form-label lblLeft">Selección</label>
+                        <div class="col-sm-8">
+                            <button mat-raised-button color="primary" id="btnProdcutos"
+                                (click)="openDialogProducto()">Productos</button> |
+                            <button mat-raised-button color="primary" id="btnClientes"
+                                (click)="openDialogoCliente()">Clientes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="row">
+                        <label for="id_Cli_Ven" class="col-sm-4 col-form-label lblLeft">Cliente</label>
+                        <div class="col-sm-8">
+                            <select name="" [(ngModel)]="id_Cli_Ven"  id="id_Cli_Ven" class="form-select">
+                                    <option value="{{ item.idCli }}" *ngFor="let item of listaCliente">{{ item.nomCli + ' ' + item.apeCli }}</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <form id="formValue" [formGroup]="conceptoForm" (ngSubmit)="submit()" action="">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <label for="id_Con_Pro" class="col-sm-4 col-form-label lblLeft">Producto</label>
+                            <div class="col-sm-8">
+                                <select name="" [(ngModel)]="id_Con_Pro" formControlName="id_Con_Pro" id="id_Con_Pro" class="form-select" style="cursor: pointer;"
+                                [ngClass]="{'is-invalid': !conceptoForm.get('id_Con_Pro')?.valid && (conceptoForm.get('id_Con_Pro')?.dirty || conceptoForm.get('id_Con_Pro')?.touched)}"
+                                (change)="mostrarProducto()">
+                                    <option value="{{ item.idPro }}" *ngFor="let item of listaProducto">{{ item.nomPro }}</option>
+                                </select>
+                                <!--select name="" [(ngModel)]="id_Con_Pro" formControlName="id_Con_Pro" id="id_Con_Pro" class="form-select">
+                                    <option value="6">Papas</option>
+                                    <option value="7">Arroz</option>
+                                    <option value="8">Leche</option>
+                                    <option value="9">Queso</option>
+                                    <option value="10">Galletas</option>
+                                </select-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <mat-form-field>
+                                    <input id="pre_Uni_Con" [(ngModel)]="pre_Uni_Con" name="pre_Uni_Con" matInput formControlName="pre_Uni_Con"
+                                        class="form-control text-right" type="number" pattern="[0-9]{4}"
+                                        placeholder="Precio" readonly>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <input id="can_Con" [(ngModel)]="can_Con" name="can_Con" matInput formControlName="can_Con"
+                                        class="form-control text-right" type="number" pattern="[0-9]{4}"
+                                        placeholder="Cantidad" min="1" max="{{ can_Con }}">
+                                </mat-form-field>
+                                <!--div id="img"></div-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="row">
+                            <label for="imp_Con" class="col-sm-4 col-form-label lblLeft">Impuesto %</label>
+                            <div class="col-sm-8">
+                                <mat-form-field>
+                                    <input id="imp_Con" matInput name="imp_Con" [(ngModel)]="imp_Con" can_Con
+                                        formControlName="imp_Con" class="form-control text-right" type="number"
+                                        pattern="[0-9]{4}" readonly>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" (click)="addConcepto()" mat-raised-button>+</button>
+                    </div>
+                </form>
+                <div>
+                    <h5>Conceptos</h5>
+                    <table style="width: 90%;" border width="60%" align="center" 
+                    bgcolor="#8ab9e1">
+                        <tr>
+                            <th>Id Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>SubTotal</th>
+                            <th>Impuesto %</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr *ngFor="let item of conceptos" align="center">
+                            <td>{{ item.id_Con_Pro }}</td>
+                            <td>{{ item.pre_Uni_Con}}</td>
+                            <td>{{ item.can_Con }}</td>
+                            <td>{{ item.pre_Uni_Con * item.can_Con }}</td>
+                            <td>{{ item.imp_Con }}</td>
+                            <td>{{ (((item.pre_Uni_Con * item.can_Con)*12)/100) + (item.pre_Uni_Con * item.can_Con) }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div mat-dialog-actions>
+                <button mat-raised-button (click)="close()">Cancelar</button>
+                <button mat-raised-button color="primary" (click)="addVenta()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="pageContent" class="container-fluid py-3">
+                    <p style="text-align: center; color: #192A67; font-size: 28px;">Listado de <strong>Clientes</strong>
+                    </p>
+                    <div class="card text-center">
+                        <div class="card-body" aria-hidden="true">
+                            <div class="table-responsive">
+                                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                                    class="table table-hover" id="clienteTabla" aria-hidden="true">
+                                    <thead>
+                                        <tr style="background-color:#287b9b;">
+                                            <th>#</th>
+                                            <th>Cédula</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Dirección</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let element of listaCliente">
+                                            <td>{{ element.idCli }}</td>
+                                            <td>{{ element.cedCli }}</td>
+                                            <td>{{ element.nomCli }}</td>
+                                            <td>{{ element.apeCli }}</td>
+                                            <td>{{ element.dirCli }}</td>
+                                            <td>
+                                                <button mat-raised-button color="primary"
+                                                    (click)="obtenerCliente(element)">
+                                                    Elegir
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 10px">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div-->
+
+<!--div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="pageContent" class="container-fluid py-3">
+                    <p style="text-align: center; color: #192A67; font-size: 28px;">Listado de <strong>Clientes</strong></p>
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #EAEBEF">
+                            <div class="row mt-3 mb-3">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                                    class="table table-hover" id="productoTabla">
+                                    <thead>
+                                        <tr style="background-color:#287b9b;">
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Marca</th>
+                                            <th>Stock</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let element of listaProducto">
+                                            <td>{{ element.idPro }}</td>
+                                            <td>{{ element.nomPro }}</td>
+                                            <td>{{ element.preUniPro }}</td>
+                                            <td>{{ element.marPro }}</td>
+                                            <td>{{ element.stockPro }}</td>
+                                            <td>
+                                                <button mat-raised-button color="primary"
+                                                    (click)="obtenerProducto(element)">
+                                                    Elegir
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 10px">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div-->
+
+
+<!--h1 mat-dailog-title>Nueva Venta</h1-->
+
+<!--div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <input matInput [(ngModel)]="venta.id_Cli_Ven">
+    </mat-form-field>
+    <form [formGroup] = "conceptoForm" (ngSubmit)="addConcepto()" >
+        <mat-form-field>
+            <mat-label>Producto</mat-label>
+            <mat-select formControlName="id_Con_Pro" multiple>
+              
+            </mat-select>
+            <input type="text" formControlName="id_Con_Pro" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Cantidad</mat-label>
+            <input type="number" formControlName="can_Con" matInput placeholder="Cantidad">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Importe</mat-label>
+            <input [disabled]="true" type="number" formControlName="imp_Con" matInput placeholder="Importe">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Precio Unitario</mat-label>
+            <input type="text" formControlName="pre_Uni_Con" matInput placeholder="Precio">
+        </mat-form-field>
+        <div>
+            <button type="submit" [disabled]="!conceptoForm.valid" mat-raised-button>+</button>
+        </div>
+    </form>
+    <div>
+        <h5>Conceptos</h5>
+        <table style="width: 100%;">
+            <tr>
+                <th>Cantidad</th>
+                <th>Impuesto</th>
+                <th>Precio</th>
+            </tr>
+            <tr *ngFor="let item of conceptos">
+                <td>{{ item.can_Con }}</td>
+                <td>{{ item.imp_Con }}</td>
+                <td>{{ item.pre_Uni_Con}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()" >Cancelar</button>
+    <button mat-raised-button color="primary" (click)="addVenta()">Guardar</button>
+</div-->

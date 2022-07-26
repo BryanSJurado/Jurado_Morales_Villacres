@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{ cliente!=null ? 'Editar Usuario' : 'Nuevo Usuario' }}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Cédula</mat-label>
+        <input matInput [(ngModel)] = "cedCli">        
+    </mat-form-field> 
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)] = "nomCli">        
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input matInput [(ngModel)] = "apeCli">       
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Género</mat-label>
+        <input matInput [(ngModel)] = "genCli">     
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Teléfono</mat-label>
+        <input matInput [(ngModel)] = "telCli">   
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <input matInput [(ngModel)] = "dirCli">   
+    </mat-form-field> 
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close();">Cancelar</button>
+    <button mat-raised-button color="primary"
+    (click)=" cliente != null ? editCliente() : addCliente();">Guardar</button> 
+</div>

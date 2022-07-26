@@ -1,0 +1,84 @@
+<!--div *ngIf="modalService.modal" role="dialog"  class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="text-align: center; color: #192A67; font-size: 28px;"> Listado de <strong>Productos</strong> </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover" id="productoTabla">
+            <thead>
+              <tr style="background-color:#287b9b;">
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Marca</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of listaProductos">
+                <td>{{ element.idPro }}</td>
+                <td>{{ element.nomPro }}</td>
+                <td>{{ element.preUniPro }}</td>
+                <td>{{ element.marPro }}</td>
+                <td>{{ element.stockPro }}</td>
+                <td>
+                  <button mat-raised-button color="primary" (click)="openVenta(element)">
+                    Elegir
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div-->
+
+<div *ngIf="modalService.modal" id="pageContent" class="container-fluid py-3">
+  <p style="text-align: center; color: #192A67; font-size: 28px;"><strong>Productos</strong></p>
+  <div class="card text-center">
+    <div class="card-header" style="background-color: #EAEBEF">
+      <div class="row mt-3 mb-3">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover" id="productoTabla">
+          <thead>
+            <tr style="background-color:#287b9b;">
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Marca</th>
+              <th>Stock</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let element of listaProductos">
+              <td>{{ element.idPro }}</td>
+              <td>{{ element.nomPro }}</td>
+              <td>{{ element.preUniPro }}</td>
+              <td>{{ element.marPro }}</td>
+              <td>{{ element.stockPro }}</td>
+              <td>
+                <button mat-raised-button color="primary" (click)="openVenta(element)">
+                  Elegir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="height: 10px">
+  </div>
+</div>

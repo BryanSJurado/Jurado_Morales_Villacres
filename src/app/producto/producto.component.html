@@ -1,0 +1,106 @@
+<div id="pageContent" class="container-fluid py-3">
+  <p style="text-align: center; color: #3c4d8a; font-size: 28px;"><strong>Productos</strong></p>
+  <div class="card text-center">
+    <div class="card-header" style="background-color: #EAEBEF">
+      <div class="row mt-3 mb-3">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover" id="productoTabla">
+          <thead>
+            <tr style="background-color:#287b9b;">
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Marca</th>
+              <th>Stock</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let element of lst">
+              <td>{{ element.idPro }}</td>
+              <td>{{ element.nomPro }}</td>
+              <td>{{ element.preUniPro }}</td>
+              <td>{{ element.marPro }}</td>
+              <td>{{ element.stockPro }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="height: 10px">
+  </div>
+</div>
+
+<!--div id="pageContent" class="container-fluid py-3">
+    <p style="text-align: center; color: #192A67; font-size: 28px;">Listado de <strong>Productos</strong></p>
+    <div class="card text-center">
+    <div class="card-body">
+        <div class="table-responsive">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover" id="pagoTable">
+            <thead>
+              <tr style="background-color:#192A67;">
+                <th>Id Producto</th>
+                <th>Nombre</th>
+                <th>Precio U.</th>
+                <th>Imagen</th>
+                <th>Marca</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pago of lst">
+                <td>{{ pago.idPro }}</td>
+                <td>{{ pago.nomPro }}</td>
+                <td>{{ pago.preUniPro }}</td>
+                <td>{{ pago.marPro }}</td>
+                <td><div id="img"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="height: 50px">
+    </div>
+  </div-->
+
+<!--div> 
+    <table mat-table [dataSource] = "lst" class="mat-elevation-z4">
+        <ng-container matColumnDef = "id">
+            <th mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let element"> {{element.idPro}} </td>
+        </ng-container> 
+
+        <ng-container matColumnDef = "nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nomPro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef = "precio">
+            <th mat-header-cell *matHeaderCellDef> Precio </th>
+            <td mat-cell *matCellDef="let element"> {{element.preUniPro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef = "imagen">
+            <th mat-header-cell *matHeaderCellDef> Imagen </th>
+            <td mat-cell *matCellDef="let element"> <div id="img"></div>  </td>
+        </ng-container>
+
+        <ng-container matColumnDef = "marca">
+            <th mat-header-cell *matHeaderCellDef> Marca </th>
+            <td mat-cell *matCellDef="let element"> {{element.marPro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef = "stock">
+          <th mat-header-cell *matHeaderCellDef> Stock </th>
+          <td mat-cell *matCellDef="let element"> {{element.stockPro}} </td>
+      </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+    </table>
+</div-->

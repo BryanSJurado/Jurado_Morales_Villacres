@@ -1,0 +1,56 @@
+.main-login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  mat-card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/imagenes/fondo2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  mat-card-title{
+    width: 15%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/imagenes/usuario.png);
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+  }
+/*
+  mat-card-title::before{
+    width: 15%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: negrita;
+    color: rgb(7, 4, 4);
+    content: "Iniciar Sesión";
+  }
+*/
+  .buttonLogin{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 25px;
+    border: 1px solid #0016b0;
+  }
+  .buttonLogin:hover{
+    color: #303f47;
+    background-color: #ffffff;
+  }
