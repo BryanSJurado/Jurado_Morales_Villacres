@@ -16,7 +16,7 @@ const httpOption = {
   })
   export class ApiProductoService {
 
-    url: string = 'https://www.wsventas.somee.com/servicios/api/Producto'
+    url: string = 'http://www.wsVentas.somee.com/servicios/api/Producto'
     //'https://localhost:44395/api/Producto';
   
     

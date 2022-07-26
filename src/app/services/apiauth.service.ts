@@ -17,7 +17,7 @@ const httpOption = {
 })
 
 export class ApiauthService{
-    url: string = 'https://www.wsventas.somee.com/servicios/api/User/login' 
+    url: string = 'http://www.wsVentas.somee.com/servicios/api/User/login' 
     //'https://localhost:44395/api/User/login';
 
     private usuarioSubject: BehaviorSubject<Usuario>;

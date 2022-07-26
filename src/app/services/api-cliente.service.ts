@@ -15,7 +15,7 @@ const httpOption = {
 })
 export class ApiClienteService {
 
-  url: string = 'https://www.wsventas.somee.com/servicios/api/Cliente'
+  url: string = 'http://www.wsVentas.somee.com/servicios/api/Cliente'
   //'https://localhost:44395/api/Cliente';
 
   

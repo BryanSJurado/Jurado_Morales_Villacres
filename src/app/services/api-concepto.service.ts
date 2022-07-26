@@ -15,7 +15,7 @@ const httpOption = {
   })
   export class ApiConceptoService {
   
-    url: string = 'https://www.wsventas.somee.com/servicios/api/Concepto' 
+    url: string = 'http://www.wsVentas.somee.com/servicios/api/Concepto' 
     //'https://localhost:44395/api/Concepto';
   
     

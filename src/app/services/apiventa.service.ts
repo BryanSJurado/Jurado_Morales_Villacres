@@ -15,7 +15,7 @@ const httpOption = {
 })
 export class ApiVentaService {
 
-  url:string = 'https://www.wsventas.somee.com/servicios/api/Venta'
+  url:string = 'http://www.wsVentas.somee.com/servicios/api/Venta'
   //'https://localhost:44395/api/Venta';
 
   constructor(
