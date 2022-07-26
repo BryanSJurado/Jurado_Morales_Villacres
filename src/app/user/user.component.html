@@ -1,0 +1,48 @@
+<div mat-dialog-content>
+    <button mat-raised-button color = "primary" (click)="openAdd();">Nuevo</button>
+</div>
+
+<div id="pageContent" class="container-fluid py-3">
+    <p style="text-align: center; color: #455075; font-size: 28px;"><strong>Clientes</strong></p>
+    <div class="card text-center">
+        <div class="card-header" style="background-color: #EAEBEF">
+          <div class="row mt-3 mb-3">
+          </div>
+        </div>
+    <div class="card-body">
+        <div class="table-responsive">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover" id="clienteTabla">
+            <thead>
+              <tr style="background-color:#287b9b;">
+                <th>#</th>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of listaCliente">
+                <td>{{ element.idCli }}</td>
+                <td>{{ element.cedCli }}</td>
+                <td>{{ element.nomCli }}</td>
+                <td>{{ element.apeCli }}</td>
+                <td>{{ element.genCli }}</td>
+                <td>{{ element.telCli }}</td>
+                <td>{{ element.dirCli }}</td>
+                <td>
+                    <button (click)="openEdit(element)" mat-raised-button color="basic">Editar</button> |
+                    <button (click)="Delete(element)" mat-raised-button color="warn">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="height: 10px">
+    </div>
+  </div>

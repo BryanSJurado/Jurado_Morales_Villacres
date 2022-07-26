@@ -18,6 +18,31 @@
     border-style: unset;
   }
 
+  #buttonUser{
+    width: 120;
+    height: 35px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: unset;
+  }
+
+  #routerUser{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(46, 54, 70);
+  }
+
+  #buttonUser:hover{
+    background-color: #0077ff;
+  }
+
   #buttonInicio{
     width: 85px;
     height: 30px;
