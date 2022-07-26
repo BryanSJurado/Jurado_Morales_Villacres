@@ -6,27 +6,27 @@
     </mat-form-field> 
     <mat-form-field>
         <mat-label>Contraseña</mat-label>
-        <input matInput [(ngModel)] = "passUsu">        
+        <input type="password" min="1" max="{{ can_Con }}" pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u002e\u003c-\u0040])(?=.*[A-Z]{2})(?=.*[a-z]{2})" matInput [(ngModel)] = "passUsu">        
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)] = "nomUsu">       
     </mat-form-field> 
 
     <mat-form-field>
         <mat-label>Teléfono</mat-label>
-        <input matInput [(ngModel)] = "telUsu">       
-    </mat-form-field> 
-
-    <mat-form-field>
-        <mat-label>Dirección</mat-label>
-        <input matInput [(ngModel)] = "dirUsu">     
-    </mat-form-field> 
-
-    <mat-form-field>
-        <mat-label>Cédula</mat-label>
-        <input matInput [(ngModel)] = "cedUsu">   
+        <input matInput [(ngModel)] = "telUsu">     
     </mat-form-field> 
 
     <mat-form-field>
         <mat-label>Dirección</mat-label>
         <input matInput [(ngModel)] = "dirUsu">   
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Cédula</mat-label>
+        <input matInput [(ngModel)] = "cedUsu">   
     </mat-form-field> 
 </div>
 <div mat-dialog-actions>

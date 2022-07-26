@@ -29,7 +29,7 @@ const httpOption = {
       }
     
       addUsuario(usuario:User): Observable<Response>{
-        return this._http.post<Response>(this.url, usuario, httpOption);
+        return this._http.post<Response>(this.url + '/AddUser', usuario, httpOption);
       }
 
     
