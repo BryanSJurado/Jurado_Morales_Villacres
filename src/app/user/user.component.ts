@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
 import { ApiUserService } from '../services/api-user.service';
+import { DialoguserComponent } from './dialog/dialoguser/dialoguser.component';
 
 @Component({
   selector: 'app-user',
@@ -48,6 +49,12 @@ export class UserComponent implements OnInit {
     })
   }
 
-
-
+  openAdd(){
+    const dialogref = this.dialog.open(DialoguserComponent, {
+      width: this.width 
+    });
+    dialogref.afterClosed().subscribe(result => {
+     // this.getClientes();
+    });
+  }
 }

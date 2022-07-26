@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Response} from '../models/response';
-import { Usuario } from "../models/usuario";
+import { User } from "../models/user";
 
 
 const httpOption = {
@@ -28,7 +28,7 @@ const httpOption = {
         return this._http.get<Response>(this.url);
       }
     
-      addUsuario(usuario:Usuario): Observable<Response>{
+      addUsuario(usuario:User): Observable<Response>{
         return this._http.post<Response>(this.url, usuario, httpOption);
       }
 

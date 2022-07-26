@@ -29,6 +29,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { DialogclienteComponent } from './venta/dialog/dialogcliente/dialogcliente.component';
 import { DialogproductoComponent } from './venta/dialog/dialogproducto/dialogproducto.component';
 import { UserComponent } from './user/user.component';
+import { DialoguserComponent } from './user/dialog/dialoguser/dialoguser.component';
 
 @NgModule({
   
@@ -45,7 +46,8 @@ import { UserComponent } from './user/user.component';
     DialogDetalleVentaComponent,
     DialogclienteComponent,
     DialogproductoComponent,
-    UserComponent
+    UserComponent,
+    DialoguserComponent
   ],
   imports: [
     BrowserModule,
