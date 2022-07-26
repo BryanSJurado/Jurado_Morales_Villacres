@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
 
   public listaUsuarios: any[] = [];
   public columnas: string[] = ['id','cedula','nombre', 'mail', 'telefono','direccion', 'actions'];
-  readonly width:string = '300px';
+  readonly width:string = '400px';
   dtOptions: DataTables.Settings | any = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
