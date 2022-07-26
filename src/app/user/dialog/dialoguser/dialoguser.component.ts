@@ -45,7 +45,7 @@ export class DialoguserComponent implements OnInit {
 
   
 
-    addCliente(){
+    addUsuario(){
         const user: User = {idUsu: 0,
                               emailUsu: this.emailUsu,
                               passUsu : this.emailUsu,
