@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
+import { DialogDeleteComponent } from '../Common/Delete/dialogdelete.component';
+import { User } from '../models/user';
 import { ApiUserService } from '../services/api-user.service';
 import { DialoguserComponent } from './dialog/dialoguser/dialoguser.component';
 
@@ -55,6 +57,24 @@ export class UserComponent implements OnInit {
     });
     dialogref.afterClosed().subscribe(result => {
      // this.getClientes();
+    });
+  }
+
+  Delete(user: User){
+    const dialogref = this.dialog.open(DialogDeleteComponent, {
+      width: this.width,
+    });
+    dialogref.afterClosed().subscribe(result => {
+      if(result === true){
+        this.apiUsuario.deleteUsuario(user.idUsu).subscribe(response =>{
+          if(response.exito === 1){
+            this.snackBar.open('Usuario eliminado con exito','', {
+              duration:2000
+            } );
+            //this.getClientes();
+          }
+        })
+      }
     });
   }
 }
